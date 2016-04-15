@@ -59,9 +59,9 @@ describe('Bugsnag', function() {
     });
 
     describe('#identify', function() {
-      it('should set metadata', function() {
+      it('should set user', function() {
         analytics.identify('id', { trait: true });
-        analytics.deepEqual(window.Bugsnag.metaData, {
+        analytics.deepEqual(window.Bugsnag.user, {
           id: 'id',
           trait: true
         });
