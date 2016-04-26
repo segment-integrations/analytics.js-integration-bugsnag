@@ -2,8 +2,7 @@
 1.1.0 / 2016-04-26
 =================
 
-
-   Make use of the user object
+  * Make use of the user object
 
 1.0.4 / 2015-06-30
 ==================
