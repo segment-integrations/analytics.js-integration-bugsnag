@@ -38,6 +38,23 @@ describe('Bugsnag', function() {
     beforeEach(function() {
       analytics.stub(bugsnag, 'load');
     });
+
+    describe('#initialize', function() {
+      it('should initialize with api key', function() {
+        analytics.initialize();
+        analytics.once('ready', function() {
+          analytics.assert(bugsnag.apiKey === options.apiKey);
+        });
+      });
+
+      it('should set releaseStage if provided', function() {
+        options.releaseStage = 'production';
+        analytics.initialize();
+        analytics.once('ready', function() {
+          analytics.assert(bugsnag.releaseStage === 'production');
+        });
+      });
+    });
   });
 
   describe('loading', function() {
@@ -55,7 +72,6 @@ describe('Bugsnag', function() {
     beforeEach(function(done) {
       analytics.once('ready', done);
       analytics.initialize();
-      analytics.page();
     });
 
     describe('#identify', function() {
