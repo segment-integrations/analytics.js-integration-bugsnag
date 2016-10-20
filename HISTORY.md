@@ -1,3 +1,9 @@
+2.1.0 / 2016-10-19
+==================
+
+  * Update Bugsnag library to v3
+  * Adds support for automatic breadcrumb tracking
+
 2.0.0 / 2016-06-21
 ==================
 
